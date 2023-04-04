@@ -1,22 +1,18 @@
 const Login = () => {
   return (
-    <div>
+    <div class="bg-grey-lighter h-screen text-base text-grey-darkest font-normal relative">
       <div class="container mx-auto p-8">
         <div class="mx-auto max-w-sm">
-          <div class="py-10 text-center">
-            {/* @include('logo', ['style' => 'max-width: 12rem;']) */}
+          <div class="py-10 text-center text-xl text-primary uppercase">
+            Starting With REPLIQ
           </div>
 
-          {/* <!-- ... --> */}
-
-          <div class="bg-white rounded shadow">
+          <div class="bg-white rounded shadow ">
             <div class="border-b py-8 font-bold text-black text-center text-xl tracking-widest uppercase">
               Welcome back!
             </div>
 
-            <form class="bg-grey-lightest px-10 py-10">
-              {/* {{ csrf_field() }} */}
-
+            <form class="bg-grey-lightest px-10 py-10 ">
               <div class="mb-3">
                 <input
                   class="border w-full p-3"
