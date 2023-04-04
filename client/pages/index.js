@@ -7,7 +7,8 @@ import HomePage from "@/src/components/home/home-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ data }) {
+  const clothes = data.filter((clothe) => clothe.category.name == "Clothes");
   return (
     <>
       <Head>
@@ -29,8 +30,18 @@ export default function Home() {
             <Link href="/others">Others</Link>
           </nav>
         </header>
-        <HomePage />
+        <HomePage data={clothes} />
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const { products } = await import("/data/data.json");
+
+  return {
+    props: {
+      data: products,
+    },
+  };
 }
