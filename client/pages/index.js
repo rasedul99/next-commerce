@@ -8,7 +8,6 @@ import HomePage from "@/src/components/home/home-page";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ data }) {
-  const clothes = data.filter((clothe) => clothe.category.name == "Clothes");
   return (
     <>
       <Head>
@@ -30,7 +29,7 @@ export default function Home({ data }) {
             <Link href="/others">Others</Link>
           </nav>
         </header>
-        <HomePage data={clothes} />
+        <HomePage data={data} />
       </main>
     </>
   );
