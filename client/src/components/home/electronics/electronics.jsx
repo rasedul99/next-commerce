@@ -1,12 +1,11 @@
 import React from "react";
 import Card from "../card/card";
 
-const Clothes = ({ data }) => {
-  console.log(data);
+const Electronics = ({ data }) => {
   return (
     <div className="">
       <div className="uppercase font-bold text-[#103755] py-4 text-2xl">
-        Clothes
+        Electronics
       </div>
 
       <div className="grid gap-y-5 lg:grid-cols-5 md:grid-cols-4 gap-6 ">
@@ -18,4 +17,4 @@ const Clothes = ({ data }) => {
   );
 };
 
-export default Clothes;
+export default Electronics;
