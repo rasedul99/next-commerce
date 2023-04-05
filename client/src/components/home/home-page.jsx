@@ -3,14 +3,15 @@ import React from "react";
 import Clothes from "./clothes/clothes";
 import Electronics from "./electronics/electronics";
 import AllProducts from "./allProducts/allProducts";
-import Categories from "./categories/categories";
 import Categorie from "./categories/categories";
-
+import hero from "../../images/hero.png";
+import Image from "next/image";
+import Navbar from "../navbar/navbar";
+import Nav from "../navbar/Nav";
 const HomePage = ({ data, categories }) => {
-  console.log(data);
-  const clothes = data.filter((clothe) => clothe.category.name == "Clothes");
+  const clothes = data.filter((cloth) => cloth.category.name == "Clothes");
   const electronics = data.filter(
-    (clothe) => clothe.category.name == "Electronics"
+    (cloth) => cloth.category.name == "Electronics"
   );
   return (
     <div>
@@ -20,7 +21,8 @@ const HomePage = ({ data, categories }) => {
             
           </Link>
         ))} */}
-
+        <Navbar data={categories} />
+        <Image priority src={hero} alt="hero image example" />
         <div className="max-w-7xl mx-auto">
           <Categorie data={categories} />
           <AllProducts data={data} />
