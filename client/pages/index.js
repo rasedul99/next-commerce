@@ -7,7 +7,8 @@ import HomePage from "@/src/components/home/home-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ data }) {
+export default function Home({ data, categories }) {
+  console.log(categories);
   return (
     <>
       <Head>
@@ -29,18 +30,19 @@ export default function Home({ data }) {
             <Link href="/others">Others</Link>
           </nav>
         </header>
-        <HomePage data={data} />
+        <HomePage data={data} categories={categories} />
       </main>
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const { products } = await import("/data/data.json");
+  const { products, categories } = await import("/data/data.json");
 
   return {
     props: {
       data: products,
+      categories: categories,
     },
   };
 }
